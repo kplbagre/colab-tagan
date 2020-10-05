@@ -1,6 +1,7 @@
+
 import os
 import argparse
-import fastText
+import fasttext #here old - fastText
 
 from data import ConvertCapVec
 
