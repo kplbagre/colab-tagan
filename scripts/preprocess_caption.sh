@@ -1,11 +1,11 @@
-/content/colab-tagan/CONFIG
+CONFIG
 
-python /content/colab-tagan/preprocess_caption.py \
+python preprocess_caption.py \
     --caption_root ${FLOWERS_CAPTION_ROOT} \
     --fasttext_model ${FASTTEXT_MODEL} \
     --max_nwords 50
 
-python /content/colab-tagan/preprocess_caption.py \
+python preprocess_caption.py \
     --caption_root ${BIRDS_CAPTION_ROOT} \
     --fasttext_model ${FASTTEXT_MODEL} \
     --max_nwords 50
