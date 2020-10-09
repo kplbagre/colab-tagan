@@ -1,4 +1,4 @@
-CONFIG
+. ./CONFIG
 
 python preprocess_caption.py \
     --caption_root ${FLOWERS_CAPTION_ROOT} \
