@@ -1,6 +1,6 @@
 import os
 import argparse
-import fastText
+import fasttext
 from PIL import Image
 import cv2
 import numpy as np
@@ -39,7 +39,7 @@ if __name__ == '__main__':
         os.makedirs(args.output_root)
 
     print('Loading a pretrained fastText model...')
-    word_embedding = fastText.load_model(args.fasttext_model)
+    word_embedding = fasttext.load_model(args.fasttext_model)
 
     print('Loading a pretrained model...')
     G = Generator().to(device)
