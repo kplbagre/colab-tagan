@@ -1,6 +1,6 @@
 source /content/colab-tagan/CONFIG
 
-python train.py \
+python /content/colab-tagan/train.py \
     --img_root /content/drive/'My Drive'/MTP_Dataset/oxford102/jpg \
     --caption_root /content/drive/'My Drive'/MTP_Dataset/oxford102/flowers_icml \
     --trainclasses_file /content/drive/'My Drive'/MTP_Dataset/oxford102/flowers_icml/trainvalclasses.txt \
