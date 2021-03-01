@@ -1,10 +1,10 @@
-source /content/colab-tagan/CONFIG
+source /others/cs19m029/colab-tagan/CONFIG
 
-python /content/colab-tagan/train.py \
-    --img_root /content/drive/'My Drive'/MTP_Dataset/oxford102/jpg \
-    --caption_root /content/drive/'My Drive'/MTP_Dataset/oxford102/flowers_icml_vec \
-    --trainclasses_file /content/drive/'My Drive'/MTP_Dataset/oxford102/flowers_icml_vec/trainvalclasses.txt \
-    --save_filename_G /content/drive/'My Drive'/MTP_Dataset/models/flowers_Train.pth \
-    --save_filename_D /content/drive/'My Drive'/MTP_Dataset/models/flowers_Train.pth \
+python /others/cs19m029/colab-tagan/train.py \
+    --img_root /others/cs19m029/MTP_Dataset/oxford102/jpg \
+    --caption_root /others/cs19m029/MTP_Dataset/oxford102/flowers_icml_vec \
+    --trainclasses_file /others/cs19m029/MTP_Dataset/oxford102/flowers_icml_vec/trainvalclasses.txt \
+    --save_filename_G /others/cs19m029/MTP_Dataset/models/flowers_Train.pth \
+    --save_filename_D /others/cs19m029/MTP_Dataset/models/flowers_Train.pth \
     --lambda_cond_loss 10 \
     --lambda_recon_loss 0.2
