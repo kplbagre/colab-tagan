@@ -66,7 +66,7 @@ if __name__ == '__main__':
     device = torch.device('cpu' if args.no_cuda else 'cuda')
 
     caption_root = args.caption_root.split('/')[-1]
-    if (caption_root) not in os.listdir(args.caption_root.replace(caption_root, '')):  #here I am removing '_vec'
+    if (caption_root + '_vec') not in os.listdir(args.caption_root.replace(caption_root, '')):  #here I am removing '_vec'
         raise RuntimeError('Caption data was not prepared. Please run preprocess_caption.py.')
 
     if not os.path.exists(os.path.dirname(args.save_filename_G)):
