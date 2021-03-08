@@ -5,4 +5,4 @@ python /content/colab-tagan/test.py \
     --text_file /content/colab-tagan/test/text_birds.txt \
     --fasttext_model /content/drive/'My Drive'/MTP_Dataset/fastText/wiki.en/wiki.en.bin \
     --generator_model /content/drive/'My Drive'/MTP_Dataset/models/birds_Train_G.pth \
-    --output_root /content/drive/'My Drive'/MTP_Dataset/output/result_birds
+    --output_root /content/drive/'My Drive'/MTP_Dataset/output/new_birds
