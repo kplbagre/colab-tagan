@@ -5,4 +5,4 @@ python /content/colab-tagan/test.py \
     --text_file /content/colab-tagan/test/text_flowers.txt \
     --fasttext_model /content/drive/'My Drive'/MTP_Dataset/fastText/wiki.en/wiki.en.bin \
     --generator_model /content/drive/'My Drive'/MTP_Dataset/models/flowers_Train_G.pth \
-    --output_root /content/drive/'My Drive'/MTP_Dataset/output/result_flowers
+    --output_root /content/drive/'My Drive'/MTP_Dataset/output/new_flowers
