@@ -1,6 +1,6 @@
 source /others/cs19m029/colab-tagan/CONFIG
 
-python train.py \
+python /content/colab-tagan/train.py \
     --img_root /content/drive/'My Drive'/MTP_Dataset/CUB_200_2011/images \
     --caption_root /content/drive/'My Drive'/MTP_Dataset/CUB_200_2011/cub_icml \
     --trainclasses_file /content/drive/'My Drive'/MTP_Dataset/CUB_200_2011/cub_icml/trainvalclasses.txt \
