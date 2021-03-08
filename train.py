@@ -25,7 +25,7 @@ parser.add_argument('--save_filename_D', type=str, required=True,
                     help='checkpoint file of discriminator')
 parser.add_argument('--generator_model', type=str, required=True,
                    help='load previous trained model')
-parser.add_argument('discriminator_model', type=str, required=True,
+parser.add_argument('--discriminator_model', type=str, required=True,
                    help='load previous trained model')
 parser.add_argument('--log_interval', type=int, default=10,
                     help='the number of iterations (default: 10)')
