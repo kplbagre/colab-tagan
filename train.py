@@ -23,6 +23,10 @@ parser.add_argument('--save_filename_G', type=str, required=True,
                     help='checkpoint file of generator')
 parser.add_argument('--save_filename_D', type=str, required=True,
                     help='checkpoint file of discriminator')
+parser.add_argument('--generator_model', type=str, required=True,
+                   help='load previous trained model')
+parser.add_argument('discriminator_model', type=str, required=True,
+                   help='load previous trained model')
 parser.add_argument('--log_interval', type=int, default=10,
                     help='the number of iterations (default: 10)')
 parser.add_argument('--num_threads', type=int, default=8,
@@ -93,6 +97,11 @@ if __name__ == '__main__':
 
     G = Generator()
     D = Discriminator()
+    
+    # next two lines
+    G.load_state_dict(torch.load(args.generator_model))
+    D.load_state_dict(torch.load(args.discriminator_model))
+    
     G, D = G.to(device), D.to(device)
 
     g_optimizer = torch.optim.Adam(G.parameters(),
