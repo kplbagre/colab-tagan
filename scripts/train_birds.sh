@@ -7,4 +7,6 @@ python /content/colab-tagan/train.py \
     --save_filename_G /content/drive/'My Drive'/MTP_Dataset/models/birds_Train_G.pth \
     --save_filename_D /content/drive/'My Drive'/MTP_Dataset/models/birds_Train_D.pth \
     --lambda_cond_loss 10 \
-    --lambda_recon_loss 0.2
+    --lambda_recon_loss 0.2 \
+    --generator_model /content/drive/'My Drive'/MTP_Dataset/models/birds_Train_G.pth \
+    --discriminator_model /content/drive/'My Drive'/MTP_Dataset/models/birds_Train_D.pth
