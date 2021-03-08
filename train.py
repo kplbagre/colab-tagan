@@ -93,6 +93,9 @@ if __name__ == '__main__':
 
     G = Generator()
     D = Discriminator()
+    #adding next two lines
+    #G.load_state_dict(torch.load(args.generator_model))
+    
     G, D = G.to(device), D.to(device)
 
     g_optimizer = torch.optim.Adam(G.parameters(),
