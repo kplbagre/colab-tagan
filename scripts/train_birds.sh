@@ -1,4 +1,4 @@
-source /others/cs19m029/colab-tagan/CONFIG
+source /content/colab-tagan/CONFIG
 
 python /content/colab-tagan/train.py \
     --img_root /content/drive/'My Drive'/MTP_Dataset/CUB_200_2011/images \
