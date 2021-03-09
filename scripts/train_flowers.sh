@@ -7,4 +7,6 @@ python /others/cs19m029/colab-tagan/train.py \
     --save_filename_G /others/cs19m029/MTP_Dataset/models/flowers_Train_G.pth \
     --save_filename_D /others/cs19m029/MTP_Dataset/models/flowers_Train_D.pth \
     --lambda_cond_loss 10 \
-    --lambda_recon_loss 0.2
+    --lambda_recon_loss 0.2 \
+    --generator_model /others/cs19m029/MTP_Dataset/models/flowers_Train_G.pth \
+    --generator_model /others/cs19m029/MTP_Dataset/models/flowers_Train_D.pth
