@@ -5,4 +5,6 @@ python /others/cs19m029/colab-tagan/test.py \
     --text_file /others/cs19m029/colab-tagan/test/text_flowers.txt \
     --fasttext_model /others/cs19m029/MTP_Dataset/fastText/wiki.en/wiki.en.bin \
     --generator_model /others/cs19m029/MTP_Dataset/models/flowers_G.pth \
-    --output_root /others/cs19m029/MTP_Dataset/output/result_flowers
+    --output_root /others/cs19m029/MTP_Dataset/output/result_flowers \
+    --generator_model /others/cs19m029/MTP_Dataset/models/flowers_Train_G.pth \
+    --generator_model /others/cs19m029/MTP_Dataset/models/flowers_Train_D.pth
