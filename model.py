@@ -260,3 +260,34 @@ class Discriminator(nn.Module):
         u = (h_f + h_b) / 2
         m = u.sum(0) / mask.sum(0)
         return u, m, mask
+
+    def getCAM(self, img, txt, len_txt, K=5):
+    img_feat_1 = self.encoder_1(img)
+    img_feat_2 = self.encoder_2(img_feat_1)
+    img_feat_3 = self.encoder_3(img_feat_2)
+    img_feats = [self.GAP_1(img_feat_1), self.GAP_2(img_feat_2), self.GAP_3(img_feat_3)]
+
+    u, m, mask = self._encode_txt(txt, len_txt)
+    att_txt = (u * m.unsqueeze(0)).sum(-1)
+    att_txt_exp = att_txt.exp() * mask.squeeze(-1)
+    att_txt = (att_txt_exp / att_txt_exp.sum(0, keepdim=True))
+
+    weight = self.gen_weight(u).permute(2, 1, 0)
+
+    cam = []
+    _, topk = torch.topk(att_txt, K, 0)
+    for i in range(3):
+        W_dyn = self.gen_filter[i](u).permute(1, 0, 2)
+        W_dyn = W_dyn[:, :, :-1]
+        img_feat = img_feats[i]
+        img_cam = img_feat.view(img_feat.size(0), img_feat.size(1), -1)
+        img_cam = torch.bmm(W_dyn, img_cam)
+
+        cam_i = torch.gather(img_cam, 1, topk.t().unsqueeze(-1).repeat(1, 1, img_cam.size(-1)))
+        cam_i_min, _ = cam_i.min(-1, keepdim=True)
+        cam_i_max, _ = cam_i.max(-1, keepdim=True)
+        cam_i = (cam_i - cam_i_min) / (cam_i_max - cam_i_min)
+        cam_i = cam_i.transpose(0, 1).contiguous().view(-1, img_feat.size(2), img_feat.size(3)).data.cpu().numpy()
+        cam.append(cam_i)
+
+    return cam, att_txt.data.cpu().numpy(), topk.data.cpu().numpy(), weight.data.cpu().numpy()
