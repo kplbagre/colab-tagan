@@ -261,7 +261,7 @@ class Discriminator(nn.Module):
         m = u.sum(0) / mask.sum(0)
         return u, m, mask
 
-    def getCAM(self, img, txt, len_txt, K=5):
+def getCAM(self, img, txt, len_txt, K=5):
     img_feat_1 = self.encoder_1(img)
     img_feat_2 = self.encoder_2(img_feat_1)
     img_feat_3 = self.encoder_3(img_feat_2)
@@ -291,3 +291,5 @@ class Discriminator(nn.Module):
         cam.append(cam_i)
 
     return cam, att_txt.data.cpu().numpy(), topk.data.cpu().numpy(), weight.data.cpu().numpy()
+
+
