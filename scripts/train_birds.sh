@@ -8,5 +8,5 @@ python /others/cs19m029/colab-tagan/train.py \
     --save_filename_D /others/cs19m029/MTP_Dataset/models/birds_train_D.pth \
     --lambda_cond_loss 10 \
     --lambda_recon_loss 0.2 \
-    --generator_model /others/cs19m029/MTP_Dataset/models/birds_Train_G.pth
+    --generator_model /others/cs19m029/MTP_Dataset/models/birds_Train_G.pth \
     --discriminator_model /others/cs19m029/MTP_Dataset/models/birds_Train_D.pth
