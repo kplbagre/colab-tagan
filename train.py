@@ -68,6 +68,7 @@ if __name__ == '__main__':
         print('Warning: cuda is not available on this machine.')
         args.no_cuda = True
     device = torch.device('cpu' if args.no_cuda else 'cuda')
+    #device = torch.device('cpu')
 
     caption_root = args.caption_root.split('/')[-1]
     if (caption_root + '_vec') not in os.listdir(args.caption_root.replace(caption_root, '')):  #here I am removing '_vec'
@@ -100,6 +101,7 @@ if __name__ == '__main__':
     #adding next two lines
     #G.load_state_dict(torch.load(args.generator_model))
     G.load_state_dict(torch.load(args.generator_model))
+    print(G)
     D.load_state_dict(torch.load(args.discriminator_model))
     
     G, D = G.to(device), D.to(device)
