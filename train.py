@@ -3,7 +3,7 @@ import argparse
 import visdom
 
 import torch
-import torch.nn.functional as F
+import torch.nn.functional as F #1
 from torch.utils.data import DataLoader
 import torch.optim.lr_scheduler as lr_scheduler
 import torchvision.transforms as transforms
