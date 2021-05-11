@@ -139,13 +139,13 @@ if __name__ == '__main__':
             D.zero_grad()
 
             # real images
-            real_logit, real_c_prob, real_c_prob_n = D(img, txt, len_txt, negative=True)
+            real_logit, real_c_prob, real_c_prob_n = D(img, txt, len_txt, negative=True) #3
 
-            real_loss = F.binary_cross_entropy_with_logits(real_logit, ones_like(real_logit))
+            real_loss = F.binary_cross_entropy_with_logits(real_logit, ones_like(real_logit)) # here for real_logit we are calculating loss with 1
             avg_D_real_loss += real_loss.item()
 
             real_c_loss = (F.binary_cross_entropy(real_c_prob, ones_like(real_c_prob)) + \
-                F.binary_cross_entropy(real_c_prob_n, zeros_like(real_c_prob_n))) / 2
+                F.binary_cross_entropy(real_c_prob_n, zeros_like(real_c_prob_n))) / 2    # here for real_c with 1 and real_c neg with 0
             avg_D_real_c_loss += real_c_loss.item()
 
             real_loss = real_loss + args.lambda_cond_loss * real_c_loss
